@@ -19,23 +19,24 @@ En git bash realizar los siguientes pasos
 
 1. git clone <URL_DEL_REPOSITORIO>
 
-2. cd mi_proyecto
+2. cd carpeta_con_proyecto
    
 3. python -m venv venv
    
 4. source venv/Scripts/activate
 
-5. pip install notebook
+5. pip install notebook ipykernel
 
 
 Ejecución del programa:
 
-En git bash escribir
+En git bash:
 
 - jupyter notebook
 
-Y luego abrir
+Y luego abrir el archivo correspondiente, por ejemplo:
 
-- notebooks/Ejercicio10.ipynb
+- ejercicio_10/notebooks/ejercicio_10.ipynb
+- ejercicios_1_9/notebooks/ejercicio_1.ipynb
 
 Y ejecutar todas las celdas.
