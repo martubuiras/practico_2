@@ -27,7 +27,7 @@ def procesar_ronda (ronda, resultados):
 
 def mostrar_tabla_parcial (resultados):
     for nombre, datos in resultados.items():
-        print (nombre, datos["total"])
+        print (f"{nombre:<12}{datos['total']:<15}")
         #Imprime los puntajes de cada participante 
 
 def mostrar_tabla_final (resultados, ronda):
@@ -35,7 +35,11 @@ def mostrar_tabla_final (resultados, ronda):
     #Ordena a los participantes de mayor a menor segun su puntaje
 
     print ("\nTabla final:")
+     # Encabezado
+    print(f"{'Cocinero':<12}{'Puntaje':<10}{'Rondas ganadas':<18}{'Mejor ronda':<15}{'Promedio':<10}")
+    print("-" * 65)
+
     for nombre, datos in ordenados:
-         promedio = datos['total'] / len(ronda)
-         print (nombre, datos['total'], datos['ganadas'], datos['mejor'], round(promedio, 1))
-         #Imprime la tabla final con el promedio redoneado a un decimal
+        promedio = datos['total'] / len(ronda)
+        print(f"{nombre:<12}{datos['total']:<10}{datos['ganadas']:<18}{datos['mejor']:<15}{promedio:<10.1f}")
+    #Imprime la tabla final con el promedio redoneado a un decimal

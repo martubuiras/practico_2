@@ -69,3 +69,60 @@ def cancion_mas_corta(playlist):
             min_cancion = cancion
     return min_cancion
     #Devuelve la cancion mas corta de una playlist
+
+def tiene_un_arroba(email):
+    if email.count("@") == 1:
+        return True
+    else:
+        return False
+    #Devuelve True si el email tiene un solo arroba, False en caso contrario
+
+def tiene_texto_antes_del_arroba (email):
+    partes = email.split ("@")
+    if len(partes[0]) > 0:
+        return True
+    else:
+        return False
+    #Devuelve True si el email tiene texto antes del arroba, False en caso contrario
+
+def tiene_punto_despues_del_arroba (email):
+    partes = email.split("@")
+    if len(partes) != 2:
+        return False
+    else:
+        if "." in partes[1]:
+            return True
+        else:
+            return False
+    #Devuelve True si el email tiene un punto después del arroba, False en caso contrario
+
+def no_empieza_ni_termina_mal(email):
+    if not (email.startswith("@") or email.endswith("@") or email.startswith("..") or email.endswith("..")):
+        return True
+    else:
+        return False
+    #Devuelve True si el email no empieza ni termina con un arroba o dos puntos
+
+def dominio_valido(email):
+    partes = email.split(".")
+    if len(partes) < 2:
+        return False
+    else:
+        if len(partes[-1]) >= 2:
+            return True
+        else:
+            return False
+    #Devuelve True si el email tiene un dominio con al menos 2 caracteres
+
+def es_email_valido(email):
+    if (
+        tiene_un_arroba(email) and
+        tiene_texto_antes_del_arroba(email) and
+        tiene_punto_despues_del_arroba(email) and
+        no_empieza_ni_termina_mal(email) and
+        dominio_valido(email)
+    ):
+        return True
+    else:
+        return False
+    #Devuelve True si el email cumple con todas las condiciones para ser válido
